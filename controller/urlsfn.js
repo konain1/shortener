@@ -6,13 +6,20 @@ async function HandlerGenerateNewShortId(req,res){
     
     let url = req.body.url
     
-   let shorten =  shortenUrl(url, 7)
+   let shorten =  shortenUrl(url, 19)
+   
     await URL.create({
             shortid:shorten,
-            redirectURL:url
+            redirectURL:url,
     })
 
-    res.json({msg:shortenUrl})
+    res.json({msg:shorten})
 }
 
-module.exports = {HandlerGenerateNewShortId}
+async function GetData(req,res){
+    let shortenURLs = await URL.find()
+
+    res.json({msg:shortenURLs})
+}
+
+module.exports = {HandlerGenerateNewShortId , GetData}

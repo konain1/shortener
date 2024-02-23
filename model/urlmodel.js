@@ -5,7 +5,6 @@ const urlSchema = new mongoose.Schema({
     shortid:{
         type:String,
         require:true,
-        unique:true
     },
     redirectURL:{
         type:String,
@@ -17,4 +16,4 @@ const urlSchema = new mongoose.Schema({
 
 let URL = mongoose.model('bitlyfy',urlSchema)
 
-module.exports = {URL}
+module.exports = URL
