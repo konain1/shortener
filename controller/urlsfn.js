@@ -21,5 +21,10 @@ async function GetData(req,res){
 
     res.json({msg:shortenURLs})
 }
+async function homelander(req,res){
 
-module.exports = {HandlerGenerateNewShortId , GetData}
+   res.json({msg:"homelander"})
+// res.render('home')
+}
+
+module.exports = {HandlerGenerateNewShortId , GetData , homelander}

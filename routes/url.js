@@ -2,11 +2,11 @@
 
 const express = require('express')
 
-const {HandlerGenerateNewShortId,GetData} = require('../controller/urlsfn')
+const {HandlerGenerateNewShortId,GetData, homelander} = require('../controller/urlsfn')
 const Router = express.Router()
 
 
-Router.post('/',HandlerGenerateNewShortId)
-Router.get('/',GetData)
-
+Router.post('/makeshorten',HandlerGenerateNewShortId)
+Router.get('/getshorten',GetData)
+Router.get('/myhome',homelander)
 module.exports = Router
