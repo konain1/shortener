@@ -17,7 +17,7 @@ app.set("view engine", "ejs");
 
 app.use('/',Router)
 // app.use('/',Router)
-app.use('/' , Router)
+// app.use('/' , Router)
 
 
 
