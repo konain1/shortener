@@ -17,8 +17,10 @@ async function HandlerGenerateNewShortId(req, res) {
             redirectURL: url,
         });
 
-        // Respond with the generated short ID
-        res.json({ msg: shorten });
+        let data =   await URL.find()
+
+  res.render('homepage',{ data })
+  
     } catch (error) {
         // Handle errors gracefully by logging and sending an internal server error response
         console.error("Error generating new short ID:", error);

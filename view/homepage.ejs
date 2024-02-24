@@ -6,9 +6,21 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>home page</h1>
+    <% if (locals.shortid) { %>
+     <p>http://localhost:9014/visit/:<%=shortid%></p>
+    <% } %>
+    <h1>shortid :  </h1>
     <% data.forEach(element => { %>
         <li> <%=element.shortid  %></li>
     <% }) %>
+
+
+
+    <form action="/makeshorten" method="post" >
+
+        <input type="text" name="url" placeholder="url ">
+        <br>
+        <button type="submit">submit</button>
+    </form>
 </body>
 </html>
