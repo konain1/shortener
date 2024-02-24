@@ -16,8 +16,9 @@ app.set("view engine", "ejs");
 
 
 app.use('/',Router)
-app.use('/',Router)
+// app.use('/',Router)
 app.use('/' , Router)
+
 
 
 app.listen(9014,()=>console.log(`server runs on 9014`))
