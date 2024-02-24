@@ -62,9 +62,17 @@ async function GetData(req, res) {
 // Handle the home page request, responding with a simple message
 async function homelander(req, res) {
    // Respond with a message for the home page
-   res.json({ msg: "homelander" });
+//    res.json({ msg: "homelander" });
    // Alternatively, if rendering a view, you can uncomment the line below
-   // res.render('home');
+   res.render('home');
+}
+
+async function homepage(req,res){
+  let data =   await URL.find()
+
+  res.render('homepage',{
+    data
+  })
 }
 
 async function analytics(req,res){
@@ -75,5 +83,6 @@ async function analytics(req,res){
     res.json({traffic:result.visithistory.length})
 }
 
+
 // Export the functions to be used in other parts of the application
-module.exports = { HandlerGenerateNewShortId, GetData, homelander, visitbyShortURL ,analytics};
+module.exports = { HandlerGenerateNewShortId, GetData, homelander, visitbyShortURL ,analytics ,homepage} ;

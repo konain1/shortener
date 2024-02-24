@@ -6,12 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    
-    <form action="/ejs/homepage" >
-
-        <input type="text" name="url" placeholder="url ">
-        <br>
-        <button type="submit">submit</button>
-    </form>
+    <h1>home page</h1>
+    <% data.forEach(element => { %>
+        <li> <%=element.shortid  %></li>
+    <% }) %>
 </body>
 </html>
