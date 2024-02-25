@@ -6,12 +6,16 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>welcome Home</h1>
     
-    <form action="/ejs/homepage"  method="get">
-
-        <input type="text" name="url" placeholder="url ">
+    <form action="/user/login">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="email" required>
         <br>
+        <label for="password">Password</label>
+        <input type="password" placeholder="password" name="password" required>
         <button type="submit">submit</button>
     </form>
+
 </body>
 </html>

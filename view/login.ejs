@@ -6,25 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-   
-    <h1>shortid :  </h1>
-   
 
-  
-   
-
-
-    <form action="/makeshorten" method="post" >
-
-        <input type="text" name="url" placeholder="url ">
-        <br>
-        <button type="submit">submit</button>
-    </form>
-
-
+    <h1>you're logged in</h1>
     <% data.forEach(element => { %>
         <li> <a target="_blank"  href="http://localhost:9014/visit/<%=element.shortid %>">http://localhost:9014/visit/<%=element.shortid %> </a></li>
     <% }) %>
 
+
+    
 </body>
 </html>
