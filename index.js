@@ -11,9 +11,10 @@ const Router = require('./routes/url')
 const userRouter = require('./routes/user')
 const path = require('path')
 const app = express();
-app.use(express.json())
-// ...
-app.use(bodyParser.urlencoded({ extended: true }));
+
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 //setting view engine to ejs
 app.set("view engine", "ejs");
