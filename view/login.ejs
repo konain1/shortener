@@ -10,6 +10,13 @@
 <body>
     <h1>Welcome, <%= currentUser.username %></h1>
     <p>Email: <%= currentUser.email %></p>
+
+    <form action="/makeshorten" method="post" >
+
+        <input type="text" name="url" placeholder="url ">
+        <br>
+        <button type="submit">submit</button>
+    </form>
     <!-- Add more HTML code as needed -->
     <% allUsers.forEach(element => { %>
         <li> <a target="_blank"  href="http://localhost:9014/visit/<%=element.shortid %>">http://localhost:9014/visit/<%=element.shortid %> </a></li>

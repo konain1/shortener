@@ -8,13 +8,14 @@ async function HandlerGenerateNewShortId(req, res) {
     try {
         // Extract the URL from the request body
         let url = req.body.url;
+        let user = req.user._id
         // Generate a new short ID
         let shorten = uid.rnd();
-        console.log(url)
         // Create a new document in the URL collection with the generated short ID and provided URL
         await URL.create({
             shortid: shorten,
             redirectURL: url,
+            createdBy:user,
             visithistory:[]
         });
 
@@ -56,7 +57,9 @@ async function visitbyShortURL(req, res) {
 // Retrieve all shortened URLs from the database
 async function GetData(req, res) {
     // Fetch all documents from the URL collection
-    let shortenURLs = await URL.find();
+    let userid = req.user;
+
+    let shortenURLs = await URL.find({createdBy:userid._id});
 
     // Respond with the retrieved shortened URLs
     res.json({ msg: shortenURLs });
@@ -71,7 +74,9 @@ async function homelander(req, res) {
 }
 
 async function homepage(req,res){
-  let data =   await URL.find()
+    let user = req.user._id
+    console.log(user)
+      let data =   await URL.find()
 
   res.render('homepage',{
     data
