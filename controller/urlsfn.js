@@ -62,14 +62,21 @@ async function GetData(req, res) {
     let shortenURLs = await URL.find({createdBy:userid._id});
 
     // Respond with the retrieved shortened URLs
-    res.json({ msg: shortenURLs });
+    let shortids = []
+    for (const key in shortenURLs) {
+        console.log(shortenURLs[key].shortid)
+        shortids.push(shortenURLs[key].shortid)
+    }
+    res.json({ msg: shortids });
 }
 
 // Handle the home page request, responding with a simple message
 async function homelander(req, res) {
+    
    // Respond with a message for the home page
 //    res.json({ msg: "homelander" });
    // Alternatively, if rendering a view, you can uncomment the line below
+
    res.render('home');
 }
 
